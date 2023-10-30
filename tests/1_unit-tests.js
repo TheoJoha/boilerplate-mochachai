@@ -24,7 +24,7 @@ suite('Unit Tests', function () {
     test('#isTrue, #isNotTrue', function () {
       assert.isTrue(true, 'true is true');
       assert.isTrue(!!'double negation', 'Double negation of a truthy value is true');
-      assert.isTrue({ value: 'truthy' }, 'Objects are truthy, but are not boolean values');
+      assert.isNotTrue({ value: 'truthy' }, 'Objects are truthy, but are not boolean values');
     });
   });
 
@@ -40,7 +40,7 @@ suite('Unit Tests', function () {
     });
     // #6
     test('#strictEqual, #notStrictEqual', function () {
-      assert.notStrictEqual(6, '6');
+      assert.strictEqual(6, '6');
       assert.strictEqual(6, 3 * 2);
       assert.notStrictEqual(6 * '2', 12);
       assert.notStrictEqual([1, 'a', {}], [1, 'a', {}]);
@@ -75,8 +75,8 @@ suite('Unit Tests', function () {
     });
     // #10
     test('#approximately', function () {
-      assert.approximately(weirdNumbers(0.5), 1, 0);
-      assert.approximately(weirdNumbers(0.2), 1, 0);
+      assert.approximately(weirdNumbers(0.5), 1, 0.5);
+      assert.approximately(weirdNumbers(0.2), 1, 0.8);
     });
   });
 
