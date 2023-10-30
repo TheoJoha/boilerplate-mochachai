@@ -107,16 +107,19 @@ suite('Functional Tests with Zombie.js', function () {
       });
     });
     // #6
-    test('Submit the surname "Vespucci" in the HTML form', function (done) {
-      // assert.fail();
-      browser.fill('surname', 'Vespucci').then(() => {
-        browser.pressButton('submit', () => {
-          browser.assert.success();
-          browser.assert.text('span#name', 'Amerigo');
-          browser.assert.text('span#surname', 'Vespucci');
-          browser.assert.elements('span#dates', 1);
-          done();
-        });
+    test('submit "surname" : "Vespucci" - write your e2e test...', function(done) {
+      // fill the form, and submit.
+      browser.fill('surname', 'Vespucci').pressButton('submit', function() {
+        // assert that status is OK 200
+        browser.assert.success();
+        // assert that the text inside the element 'span#name' is 'Amerigo'
+        browser.assert.text('span#name', 'Amerigo');
+        // assert that the text inside the element 'span#surname' is 'Vespucci'
+        browser.assert.text('span#surname', 'Vespucci');
+        // assert that the element(s) 'span#dates' exist and their count is 1
+        browser.assert.element('span#dates', 1);
+    
+        done();
       });
     });
   });
