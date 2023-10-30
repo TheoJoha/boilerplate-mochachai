@@ -121,3 +121,10 @@ suite('Functional Tests with Zombie.js', function () {
     });
   });
 });
+
+// https://stackoverflow.com/questions/70588529/how-to-update-the-npm-dependence-formidable-to-install-ionic-cli
+/* Had the same issue here..
+
+If you require formidable in your project, you can do an npm install formidable@v2
+If you have other packages that require formidable as a dependency, You may want to check the package with npm ls formidable and then troubleshoot if the authors of that package have updated their dependency to the latest one. Or raise an issue if not
+In my case, it was chai-http and as on now they still have an open PR to update the projects dependencies. */
