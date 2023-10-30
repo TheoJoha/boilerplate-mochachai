@@ -118,7 +118,7 @@ suite('Functional Tests with Zombie.js', function () {
           // assert that the text inside the element 'span#surname' is 'Vespucci'
           browser.assert.text('span#surname', 'Vespucci');
           // assert that the element(s) 'span#dates' exist and their count is 1
-          browser.assert.element('span#dates', 1);
+          browser.assert.elements('span#dates', 1);
 
           done();
         });
